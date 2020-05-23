@@ -7,5 +7,6 @@ jobs:
       - checkout
 
       - run: |
-            chmod +x ./detectGitChanges.sh && ./detectGitChanges.sh folders.watch
-            echo "Hello World J"
+            chmod +x ./detectGitChanges.sh 
+            FLG=$(./detectGitChanges.sh folders.watch)
+            echo $FLG
