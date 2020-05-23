@@ -8,6 +8,7 @@ trigger_build="false"
 
 detect_changed_folders() {
   folders=$(git diff --name-only ${GIT_COMMIT} ${GIT_PREVIOUS_COMMIT} | sort -u | uniq)
+  echo ${folders}
   export changed_components=${folders}
 }
 
