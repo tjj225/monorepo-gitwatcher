@@ -7,6 +7,12 @@ jobs:
       - checkout
 
       - run: |
-            chmod +x ./detectGitChanges.sh 
+            chmod +x ./detectGitChanges.sh
+            chmod +x ./src/run.sh 
             FLG=$(./detectGitChanges.sh folders.watch)
-            echo $FLG
+            if [  "$FLG" = "true"  ]; then
+              ./src/run.sh
+            else
+              echo "No changes"
+            fi
+
