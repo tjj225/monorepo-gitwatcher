@@ -1,0 +1,11 @@
+version: 2.1
+jobs:
+  build:
+    docker:
+      - image: circleci/node:11.10.1
+    steps:
+      - checkout
+
+      - run: |
+            chmod +x ./detectGitChanges.sh && ./detectGitChanges.sh folders.watch
+            echo "Hello World J"
