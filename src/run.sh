@@ -1,2 +1,2 @@
 #!/bin/bash -e
-echo success
+echo success1
