@@ -10,7 +10,8 @@ jobs:
             chmod +x ./detectGitChanges.sh
             chmod +x ./src/run.sh 
             FLG=$(./detectGitChanges.sh folders.watch)
-            if [  "$FLG" = "true"  ]; then
+            echo "$FLG"
+            if [[  $FLG == *"true"*  ]]; then
               ./src/run.sh
             else
               echo "No changes"
