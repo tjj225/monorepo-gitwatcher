@@ -26,4 +26,5 @@ jobs:
             - run:
                 command: |
                   echo "src was modified";
+                  chmod +x ./src/run.sh && ./src/run.sh;
                   exit 0;
