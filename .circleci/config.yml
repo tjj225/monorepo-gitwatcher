@@ -1,4 +1,8 @@
 version: 2.1
+orbs:
+    swissknife: roopakv/swissknife@0.37.0
+
+
 jobs:
   build:
     docker:
@@ -16,4 +20,10 @@ jobs:
             else
               echo "No changes"
             fi
-
+      - swissknife/run_if_modified:
+          pattern: src
+          steps-to-run:
+            - run:
+                command: |
+                  echo "src was modified";
+                  exit 0;
