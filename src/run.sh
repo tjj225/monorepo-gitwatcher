@@ -1,2 +1,2 @@
 #!/bin/bash -e
-echo success10x1
+echo success10x1dev
